@@ -6,10 +6,9 @@ import nltk
 import numpy as np
 from nltk.stem import WordNetLemmatizer
 
-from keras.models import Sequential
-from keras.layers import Dense, Activation, Dropout
-from keras.optimizer_v1 import SGD
-
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation, Dropout
+from tensorflow.keras.optimizers import SGD
 
 lemmatizer = WordNetLemmatizer()
 intents = json.loads(open('intents.json').read())
@@ -27,13 +26,11 @@ for intent in intents['intents']:
         documents.append((word_list, intent['tag']))
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
-print(documents)
+
 # lemmatize the words and classes
 words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ignore_letters]
 words = sorted(set(words))
 classes = sorted(set(classes))
-print(words)
-print(classes)
 
 # saving the lists words and classes in files, that will be using in the ML training
 pickle.dump(words, open('words.pkl', 'wb'))
@@ -48,13 +45,11 @@ for document in documents:
     bag = []
     words_patterns = document[0]
     words_patterns = [lemmatizer.lemmatize(word.lower()) for word in words_patterns]
-    print(words_patterns)
     for word in words:
         if word in words_patterns:
             bag.append(1)
         else:
             bag.append(0)
-            print(bag)
 
     output_row = list(output_empty)
     output_row[classes.index(document[1])] = 1
@@ -85,7 +80,6 @@ print(check_model)
 sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-
-
-
-
+# training the model
+model.fit(np.array(train_x), np.array(train_y), epochs=200, batch_size=5, verbose=True)
+model.save('chatbot_model.model')

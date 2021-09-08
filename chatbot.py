@@ -27,4 +27,21 @@ def clean_sentence(sentence):
     return sentence_words
 
 
-clean_sentence(sentence=input())
+# preparing the bag of words
+
+def bag_words(sentence):
+    sentence_words = clean_sentence(sentence)
+    # bag of words
+    bag = [0] * len(words)
+    for w in sentence_words:
+        print(w)
+        for i, word in enumerate(words):
+            print(i, word)
+            if word == w:
+                # assign 1 if current word is in the vocabulary position
+                bag[i] = 1
+    print(bag)
+    return np.array(bag)
+
+
+bag_words(sentence=input())

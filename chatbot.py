@@ -18,9 +18,12 @@ classes = pickle.load(open('classes.pkl', 'rb'))
 print(words, classes)
 
 
-# define a function to lemmatize the words that we will give it to the chatbot
-
 def clean_sentence(sentence):
+    """
+    define a function to lemmatize the words that we will give it to the chatbot
+    :param sentence:
+    :return: a lemmatizer sentence
+    """
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
     print(sentence_words)
@@ -30,6 +33,15 @@ def clean_sentence(sentence):
 # preparing the bag of words
 
 def bag_words(sentence):
+    """
+    prepare the bag of words, this function is in charge of
+    creating a bag with the length
+    of the word/phrase and save it in a list.
+    If the word/phrase is in the 'words' list,
+    then it replaces the 0 in the bag with a 1.
+    :param sentence:
+    :return: a bag of words
+    """
     sentence_words = clean_sentence(sentence)
     # bag of words
     bag = [0] * len(words)

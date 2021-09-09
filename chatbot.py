@@ -15,7 +15,6 @@ model = load_model('chatbotmodel.h5')
 intents = json.loads(open('intents.json').read())
 words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
-print(words, classes)
 
 
 def clean_sentence(sentence):
@@ -26,7 +25,7 @@ def clean_sentence(sentence):
     """
     sentence_words = nltk.word_tokenize(sentence)
     sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
-    print(sentence_words)
+    print('lemmatize the word/sentence:------', sentence_words)
     return sentence_words
 
 
@@ -56,4 +55,57 @@ def bag_words(sentence):
     return np.array(bag)
 
 
-bag_words(sentence=input())
+def predict_class(sentence):
+    """
+    in this function we compare the phrase/word with the class it belongs to,
+    i.e. we write words that match the list words and this function will
+    compare them with our model and predict which class they belong to.
+
+    :param sentence:
+    :return: return_list ---> example with the word 'hello':
+            output -----> [{'intent': 'greeting', 'probability': '0.9996928'}]
+
+    """
+    bag_of_words = bag_words(sentence)
+    print('bag of words without coma : ------', bag_of_words)
+    result = model.predict(np.array([bag_of_words]))[0]
+    print('result: ----- ', result)
+
+    ERROR_THRESHOLD = 0.25
+
+    results = [[i, r] for i, r in enumerate(result) if r > ERROR_THRESHOLD]
+    print('results after: ---- ', results)
+
+    # sort by strength of probability
+    results.sort(key=lambda x: x[1], reverse=True)
+    return_list = []
+    for r in results:
+        return_list.append({"intent": classes[r[0]], "probability": str(r[1])})
+        print(return_list)
+    return return_list
+
+
+def getResponse(ints, intents_json):
+    """
+    in this function  will respond to the customer based on our model.
+
+    :param ints:
+    :param intents_json:
+    :return: res
+    """
+    tag = ints[0]["intent"]
+    print('tag: ---- ', tag)
+    list_of_intents = intents_json["intents"]
+    print('list of intents: ---- ', list_of_intents)
+    for i in list_of_intents:
+        if i["tag"] == tag:
+            res = random.choice(i["responses"])
+            print('results to answer you: ---- ', res)
+            break
+    return res
+
+
+while True:
+    msg = input(">>> ")
+    ints = predict_class(msg)
+    res = getResponse(ints, intents)

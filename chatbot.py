@@ -1,62 +1,59 @@
-import json
-import pickle
 import random
+import numpy as np
+import pickle
+import json
 
 import nltk
-import numpy as np
+from keras.models import load_model
 from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
+
+# we load our model and pkl documents for use in our chatbot
+
+model = load_model('chatbotmodel.h5')
 intents = json.loads(open('intents.json').read())
+words = pickle.load(open('words.pkl', 'rb'))
+classes = pickle.load(open('classes.pkl', 'rb'))
+print(words, classes)
 
 
-# Tokenize the words from intents
+def clean_sentence(sentence):
+    """
+    define a function to lemmatize the words that we will give it to the chatbot
+    :param sentence:
+    :return: a lemmatizer sentence
+    """
+    sentence_words = nltk.word_tokenize(sentence)
+    sentence_words = [lemmatizer.lemmatize(word.lower()) for word in sentence_words]
+    print(sentence_words)
+    return sentence_words
 
-def tokenize_text():
-    words = []
-    classes = []
-    documents = []
-    ignore_letters = ['?', '!', '.', ',']
-    for intent in intents['intents']:
-        for pattern in intent["patterns"]:
-            word_list = nltk.word_tokenize(pattern)
-            words.extend(word_list)
-            documents.append((word_list, intent['tag']))
-            if intent['tag'] not in classes:
-                classes.append(intent['tag'])
-    print(documents)
-    # lemmatize the words and classes
-    words = [lemmatizer.lemmatize(word.lower()) for word in words if word not in ignore_letters]
-    words = sorted(set(words))
-    classes = sorted(set(classes))
-    print(words)
-    print(classes)
 
-    # saving the lists words and classes in files, that will be using in the ML training
-    pickle.dump(words, open('words.pkl', 'wb'))
-    pickle.dump(classes, open('classes.pkl', 'wb'))
+# preparing the bag of words
 
-    # Preparing the training data for the chatbot
-    # here we replace the letters by number and store them in an array
-    training = []
-    output_empty = [0] * len(classes)
+def bag_words(sentence):
+    """
+    prepare the bag of words, this function is in charge of
+    creating a bag with the length
+    of the word/phrase and save it in a list.
+    If the word/phrase is in the 'words' list,
+    then it replaces the 0 in the bag with a 1.
+    :param sentence:
+    :return: a bag of words
+    """
+    sentence_words = clean_sentence(sentence)
+    # bag of words
+    bag = [0] * len(words)
+    for w in sentence_words:
+        print(w)
+        for i, word in enumerate(words):
+            print(i, word)
+            if word == w:
+                # assign 1 if current word is in the vocabulary position
+                bag[i] = 1
+    print(bag)
+    return np.array(bag)
 
-    for document in documents:
-        bag = []
-        words_patterns = document[0]
-        words_patterns = [lemmatizer.lemmatize(word.lower()) for word in words_patterns]
-        for word in words:
-            if word in words_patterns:
-                bag.append(1)
-            else:
-                bag.append(0)
 
-        output_row = list(output_empty)
-        output_row[classes.index(document[1])] = 1
-        training.append([bag, output_row])
-
-    random.shuffle(training)
-    training = np.array(training)  # create train and test lists. X - patterns, Y - intents
-    train_x = list(training[:, 0])
-    train_y = list(training[:, 1])
-    print("Training data created")
+bag_words(sentence=input())

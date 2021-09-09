@@ -85,4 +85,27 @@ def predict_class(sentence):
     return return_list
 
 
-predict_class(sentence=input())
+def getResponse(ints, intents_json):
+    """
+    in this function  will respond to the customer based on our model.
+
+    :param ints:
+    :param intents_json:
+    :return: res
+    """
+    tag = ints[0]["intent"]
+    print('tag: ---- ', tag)
+    list_of_intents = intents_json["intents"]
+    print('list of intents: ---- ', list_of_intents)
+    for i in list_of_intents:
+        if i["tag"] == tag:
+            res = random.choice(i["responses"])
+            print('results to answer you: ---- ', res)
+            break
+    return res
+
+
+while True:
+    msg = input(">>> ")
+    ints = predict_class(msg)
+    res = getResponse(ints, intents)

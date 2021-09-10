@@ -1,5 +1,5 @@
-from flask import Flask, request
-from chatbot import *
+from flask import Flask, render_template
+# from chatbot import *
 
 app = Flask(__name__)
 
@@ -7,7 +7,7 @@ app = Flask(__name__)
 # routes
 @app.route('/')
 def home():
-    return 'hello from flask server'
+    return render_template('home.html')
 
 
 if __name__ == "__main__":

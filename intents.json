@@ -9,6 +9,46 @@
   {"tag": "goodbye",
     "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
     "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
+  },
+  {"tag": "goodbye",
+    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+    "responses":  ["Goodbye!", "Sad to see you go"]
   }
 
 ]}

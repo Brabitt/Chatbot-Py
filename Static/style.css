@@ -1,9 +1,9 @@
 body {
-
+   background-color: #fffbf4;
 }
 
 h1 {
-    color: black;
+    color: #2a4a69;
     margin-bottom: 0cm;
     margin-top: 2cm;
     text-align: center;
@@ -85,7 +85,7 @@ h3 {
 }
 .btn-warning {
     color: #fff;
-    background-color: #f08f00;
+    background-color: #ef8d6d;
     border-color: #c27400;
 }
 .btn.btn-warning:active, .btn.btn-warning:focus, .btn.btn-warning:hover {
@@ -101,7 +101,7 @@ button, input, optgroup, select, textarea {
     text-align: center;
 }
 #chatbox {
-    background-color: #fffbf4;
+    background-color: #edede5;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
@@ -112,7 +112,7 @@ button, input, optgroup, select, textarea {
 #userInput {
     margin-left: auto;
     margin-right: center;
-    width: 80%;
+    width: 88%;
     margin-top: 60px;
 }
 
@@ -125,7 +125,7 @@ button, input, optgroup, select, textarea {
 }
 
 #buttonInput {
-    padding: 3px;
+    padding: 2px;
     font-family: monospace;
     font-size: 17px;
 }
@@ -140,7 +140,7 @@ button, input, optgroup, select, textarea {
 }
 
 .userText span {
-    background-color: #009688;
+    background-color: #007381;
     padding: 10px;
     border-radius: 2px;
 }
@@ -155,7 +155,7 @@ button, input, optgroup, select, textarea {
 }
 
 .botText span {
-    background-color: #ef5350;
+    background-color: #00b09f;
     padding: 10px;
     border-radius: 2px;
 }
@@ -165,4 +165,8 @@ button, input, optgroup, select, textarea {
     bottom: 0;
     right: 0;
     width: 300px;
+}
+
+.navbar {
+    background-color: #2a4a69;
 }

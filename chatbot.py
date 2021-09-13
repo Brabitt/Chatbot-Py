@@ -105,7 +105,7 @@ def getResponse(ints, intents_json):
     return res
 
 
-while True:
-    msg = input(">>> ")
-    ints = predict_class(msg)
-    res = getResponse(ints, intents)
+#while True:
+    #msg = input(">>> ")
+    #ints = predict_class(msg)
+    #res = getResponse(ints, intents)

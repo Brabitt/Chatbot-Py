@@ -9,4 +9,4 @@ ADD . /chatbot
 RUN pip install -r requirements.txt
 
 # command to satrt the container
-CMD ["python", "chatbot.py"]
+CMD ["python", "app.py"]

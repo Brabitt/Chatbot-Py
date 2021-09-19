@@ -28,7 +28,7 @@
           "responses":  ["We accept VISA, Mastercard, AMEX and Paypal", "We accept most major credit cards and Paypal"]
   },
   {"tag": "name",
-          "patterns": [ "What is your name?", "Could you tell me your name?", "Who are you?"],
+          "patterns": [ "What is your name?", "Could you tell me your name?", "Who are you?", "what's your name?"],
           "responses":  ["well, I don't really have a definite name, my creators are working on it, but for now you can call me bot :)"]
   },
   {"tag": "subscriptions",

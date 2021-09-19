@@ -1,14 +1,91 @@
 {"intents":[
 
   {"tag": "greeting",
-    "patterns": [ "hello", "hi", "hey","whats up", "whats going on ", "Good morning",
-                  "Good afternoon", "Good evening", "It's nice to meet you",
-                  "It's a pleasure to meet you" ],
-    "responses":  ["Hey!", "Hi!", "what can I do for you?", "How can I help You"]
+          "patterns": [ "hello", "hi", "hey","whats up", "whats going on ", "Good morning",
+                        "Good afternoon", "Good evening", "It's nice to meet you",
+                        "It's a pleasure to meet you" ],
+          "responses":  ["Hey!", "Hi!", "what can I do for you?", "How can I help You"]
   },
   {"tag": "goodbye",
-    "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
-    "responses":  ["Goodbye!", "Sad to see you go"]
+          "patterns": [ "bye", "Goodbye", "Have a good day","see you later" ],
+          "responses":  ["Goodbye!", "Sad to see you go", "See you later, thanks for visiting", "Have a nice day",
+                    "Bye! Come back again soon."]
+  },
+  {"tag": "thanks",
+          "patterns": [ "Thanks", "Thank you", "That's helpful" ],
+          "responses":  ["Happy to help!", "Any time!", "My pleasure"]
+  },
+  {"tag": "new_account",
+          "patterns": [ "How can I create a new account?", "I want to create an account", "Where can I create an account?", "I would like to create an account"],
+          "responses":  ["to create an account go to our website and in the account section click on 'create new account'", "In the 'account' section, click on 'create new account', then fill in the form and you're done."]
+  },
+  {"tag": "hours",
+          "patterns": [ "What hours are you open?", "What are your hours?", "When are you open?" ],
+          "responses":  ["We're open every day 9am-5pm", "Our hours are 9am-5pm every day"]
+  },
+  {"tag": "payments",
+          "patterns": [ "Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?", "Do you accept Paypal?"],
+          "responses":  ["We accept VISA, Mastercard, AMEX and Paypal", "We accept most major credit cards and Paypal"]
+  },
+  {"tag": "name",
+          "patterns": [ "What is your name?", "Could you tell me your name?", "Who are you?", "what's your name?"],
+          "responses":  ["well, I don't really have a definite name, my creators are working on it, but for now you can call me bot :)"]
+  },
+  {"tag": "subscriptions",
+          "patterns": [ "What kind of subscriptions are there?", "How many subscriptions are there?" ],
+          "responses":  ["Currently we have several subscriptions, which are adapted to your needs, you can find them on our website", "You will find more information on our website"]
+  },
+  {"tag": "services",
+          "patterns": [ "What services does the app offer?", "types of service", "what services does the app offer?" ],
+          "responses":  ["our app offers a variety of extra services in addition to reading books", "you can find services such as text and image analysis"]
+  },
+  {"tag": "analyse_text",
+          "patterns": [ "what is text and image analysis?", "what does text analysis offer?", "text and image analysis? ","advantages of text analysis" ],
+          "responses":  ["well, the text analysis helps to make a final revision of the book before publishing it in the app!", "it's a tool that will help you find grammatical errors before publishing it",
+          "is a tool that through AI helps you to find grammatical or image errors in your books before publishing them"]
+  },
+  {"tag": "contact",
+          "patterns": [ "Where can I contact the company?", "contact details", "contact" ],
+          "responses":  ["you can reach us at Musterstr 23045 HH, Germany!", "we will be pleased to assist you personally at Musterstr 23045 HH, Germany\n"]
+  },
+  {"tag": "platforms",
+          "patterns": [ "On which platforms is the app available?", "Where can I download the app?", "is the app available on android?","is the app available on ios?",
+                      "Where can I visit the app?"],
+          "responses":  ["our app is available on all digital platforms, ios, android, web, and more", "you can download the app in app store, play store or you can visit our website"]
+  },
+  {"tag": "about_company",
+          "patterns": [ "what does the company do?", "How does the company work?", "How can your company help me?" ],
+          "responses":  ["we are a start up dedicated to software development, especially in the book sector "]
+  },
+  {"tag": "noanswer",
+         "patterns": [],
+         "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"]
+  },
+  {"tag": "about_me",
+         "patterns": ["Do you know me?", "who am I", "tell me about myself","identify me" ],
+         "responses": ["Yes, you are a human","You are a dumb person asking a machine about yourself", "Sorry i can't tell that in public, maybe you are batman"]
+  },
+  {"tag": "joke",
+         "patterns": ["tell me a joke?", "make me laugh", "tell me a science joke","tell me something funny" ],
+         "responses": ["How do you make holy water? you boil the hell out of it","what kind of bees make milk instead of honey?Boobies", "Did you hear oxygen went on a date with potassium? A: It went OK."]
+  },
+  {"tag": "books",
+          "patterns": [ "How many books does the platform currently have?", "How many books are available?", "What kind of books can I find in the app?" ],
+          "responses":  ["We currently have several types of books available and many more will be coming in the future",
+                      "you will find a large number of books available in the app",
+                      "we have a large catalogue at the moment ;) "]
+  },
+   {"tag": "books_reader",
+          "patterns": [ "How many books can I download ?", "Can I download books to read later?", "can i read books offline?" ],
+          "responses":  ["you can read and download books to read them when you don't have an internet connection"]
+  },
+    {"tag": "authors_info",
+          "patterns": [ "As the author of my book, what rights do I have?", "rights as author", "Have a good day","advantages of publishing my book on the app as an author",
+                      "information as an author"],
+          "responses":  ["well the platform always tries to give the author the best advantages for more info see our section on our website"]
+  },
+  {"tag": "subscriptions_price",
+          "patterns": [ "how much does a pro subscription cost?", "subscription prices ", "subscription price list" ],
+          "responses":  ["my creator hasn't programmed me for this yet :( but you can find more information on our website"]
   }
-
 ]}

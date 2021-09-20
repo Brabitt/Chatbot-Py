@@ -73,7 +73,7 @@ Model:
 
 ![chatbot-model](Readme-images/chatbot-model.png)
 
-![chatbot-modelinuse](Readme-images/modelinuse.jpeg)
+![chatbot-modelinuse](Readme-images/modelinuse.png)
 
 
 

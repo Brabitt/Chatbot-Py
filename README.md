@@ -71,8 +71,9 @@ Bag of Words:
 
 Model:
 
-
 ![chatbot-model](Readme-images/chatbot-model.png)
+
+![chatbot-model](Readme-images/model_in%20_use.jpeg)
 
 
 

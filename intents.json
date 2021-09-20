@@ -24,7 +24,7 @@
           "responses":  ["We're open every day 9am-5pm", "Our hours are 9am-5pm every day"]
   },
   {"tag": "payments",
-          "patterns": [ "Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?", "Do you accept Paypal?"],
+          "patterns": [ "Do you take credit cards?", "Do you accept Mastercard?", "Are you cash only?", "Do you accept Paypal?", "can I pay with Paypal?"],
           "responses":  ["We accept VISA, Mastercard, AMEX and Paypal", "We accept most major credit cards and Paypal"]
   },
   {"tag": "name",
@@ -32,8 +32,8 @@
           "responses":  ["well, I don't really have a definite name, my creators are working on it, but for now you can call me bot :)"]
   },
   {"tag": "subscriptions",
-          "patterns": [ "What kind of subscriptions are there?", "How many subscriptions are there?" ],
-          "responses":  ["Currently we have several subscriptions, which are adapted to your needs, you can find them on our website", "You will find more information on our website"]
+          "patterns": [ "What kind of subscriptions are there?", "How many subscriptions are there?", "tell me about subscription", "type of susubscriptions" ],
+          "responses":  ["Currently we have several subscriptions, which are adapted to your needs, you can find them on our website", "You will find more information on our website", "for the moment we have 3 types of subscriptions \nfree, premium and platinum.\nfor more information please visit our website"]
   },
   {"tag": "services",
           "patterns": [ "What services does the app offer?", "types of service", "what services does the app offer?" ],
@@ -54,11 +54,12 @@
           "responses":  ["our app is available on all digital platforms, ios, android, web, and more", "you can download the app in app store, play store or you can visit our website"]
   },
   {"tag": "about_company",
-          "patterns": [ "what does the company do?", "How does the company work?", "How can your company help me?" ],
-          "responses":  ["we are a start up dedicated to software development, especially in the book sector "]
+          "patterns": [ "what does the company do?","what does Easybook do?", "How does the company work?", "How can your company help me?", "what is EasyBook?","How can EasyBook help me?" ],
+          "responses":  ["we are a start up dedicated to software development, especially in the book sector ",
+          "EasyBook wants anyone to be able to publish their book without having to go to a publisher."]
   },
   {"tag": "noanswer",
-         "patterns": [],
+         "patterns": [""],
          "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"]
   },
   {"tag": "about_me",
@@ -80,12 +81,12 @@
           "responses":  ["you can read and download books to read them when you don't have an internet connection"]
   },
     {"tag": "authors_info",
-          "patterns": [ "As the author of my book, what rights do I have?", "rights as author", "Have a good day","advantages of publishing my book on the app as an author",
+          "patterns": [ "As the author of my book, what rights do I have?", "rights as author", "advantages of publishing my book on the app as an author",
                       "information as an author"],
           "responses":  ["well the platform always tries to give the author the best advantages for more info see our section on our website"]
   },
   {"tag": "subscriptions_price",
           "patterns": [ "how much does a pro subscription cost?", "subscription prices ", "subscription price list" ],
-          "responses":  ["my creator hasn't programmed me for this yet :( but you can find more information on our website"]
+          "responses":  ["we have 3 types of subscriptions\nRegular User for free\npremium for 4,99€\nplatinum for 9,99€"]
   }
 ]}
